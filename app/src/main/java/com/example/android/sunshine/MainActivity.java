@@ -123,10 +123,9 @@ public class MainActivity extends AppCompatActivity {
         int menuItemThatWasSelected = item.getItemId();
         if (menuItemThatWasSelected == R.id.action_refresh) {
 
-            Context context = MainActivity.this;
-            String message = "Refreshed";
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-
+            mWeatherTextView.setText("");
+            loadWeatherData();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
