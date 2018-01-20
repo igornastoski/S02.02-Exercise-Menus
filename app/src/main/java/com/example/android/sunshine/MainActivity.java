@@ -110,5 +110,27 @@ public class MainActivity extends AppCompatActivity {
     // TODO (6) Return true to display the menu
     // TODO (7) Override onOptionsItemSelected to handle clicks on the refresh button
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.forecast, menu);
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int menuItemThatWasSelected = item.getItemId();
+        if (menuItemThatWasSelected == R.id.action_refresh) {
+
+            Context context = MainActivity.this;
+            String message = "Refreshed";
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }
